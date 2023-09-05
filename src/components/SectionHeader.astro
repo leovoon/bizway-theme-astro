@@ -1,0 +1,56 @@
+---
+import mpLogo from "../assets/mp-logo.png";
+import { Image } from "astro:assets";
+import SearchInput from "./SearchInput.astro";
+import NavLink from "./NavLink.astro";
+import MobileNavigation from "./MobileNavigation.astro";
+
+const navLinks = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Contact Us",
+    url: "/contact",
+  },
+];
+
+const currentPathname = Astro.url.pathname;
+---
+
+<section>
+  <div class="bg-gray-50">
+    <header
+      class="container h-44 flex items-center justify-center sm:justify-start"
+    >
+      <a href="/">
+        <Image
+          src={mpLogo}
+          alt="MP Logo"
+          format="avif"
+          width={120}
+          height={120}
+        />
+      </a>
+    </header>
+
+    <nav class="w-full bg-gradient-to-t from-cyan-800 via-cyan-700 to-cyan-600">
+      <ul class="container h-14 flex gap-2 items-center justify-between">
+        <li class="h-full hidden sm:flex">
+          {
+            navLinks.map((nav) => {
+              return <NavLink href={nav.url} name={nav.name} />;
+            })
+          }
+        </li>
+        <li>
+          <MobileNavigation navLinks={navLinks} />
+        </li>
+        <li>
+          <SearchInput />
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>

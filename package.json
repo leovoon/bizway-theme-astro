@@ -1,0 +1,31 @@
+{
+  "name": "bizway-astro-react",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "@fontsource/arvo": "^5.0.11",
+    "@fontsource/inter": "^5.0.8",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^3.0.8",
+    "astro-compress": "^2.0.15",
+    "classnames": "^2.3.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-snap-carousel": "^0.3.2",
+    "sharp": "^0.32.5",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "google-map-react": "^2.2.1"
+  }
+}

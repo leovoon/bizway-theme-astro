@@ -1,0 +1,32 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import PageHeading from "../components/PageHeading.astro";
+import Address from "../components/Address.astro";
+import SimpleMap from "../components/SimpleMap";
+import LeaveAReply from "../components/LeaveAReply.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Astro/React starter contact" />
+    <title>Contact - Bizway responsive - Astro/React</title>
+    <BaseHead />
+  </head>
+  <body>
+    <main>
+      <SectionHeader />
+      <PageHeading>Contact Us</PageHeading>
+      <Address />
+      <SimpleMap client:load />
+      <LeaveAReply />
+    </main>
+
+    <Footer />
+  </body>
+</html>

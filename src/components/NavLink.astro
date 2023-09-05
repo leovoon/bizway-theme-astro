@@ -1,0 +1,24 @@
+---
+type Props = {
+  href: string;
+  name: string;
+};
+const { href, name } = Astro.props;
+
+const { pathname } = Astro.url;
+
+const isActive = pathname === href || href === pathname.replace(/\/$/, "");
+---
+
+<div
+  class:list={[
+    "relative justify-center h-full inline-flex items-center border-x border-neutral-500/30 text-white hover:bg-cyan-800 hover:border-neutral-400/50  before:contents-[''] before:border-t-1 before:border-l-1 before:w-2 before:h-2 before:bg-gray-50 before:top-0 before:rotate-45 before:-translate-y-1/2 overflow-hidden before:absolute  hover:before:block",
+    isActive
+      ? "before:block bg-cyan-800 border-neutral-400/50"
+      : "before:hidden",
+  ]}
+>
+  <a class="h-full px-6 inline-flex items-center" href={href}>
+    {name}
+  </a>
+</div>

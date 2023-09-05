@@ -1,0 +1,28 @@
+---
+import SectionHeader from "../components/SectionHeader.astro";
+import SectionHero from "../components/SectionHero.astro";
+import BaseHead from "../components/BaseHead.astro";
+import SectionServices from "../components/SectionServices.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Astro/React starter" />
+    <title>Bizway responsive - Astro/React</title>
+    <BaseHead />
+  </head>
+  <body>
+    <main>
+      <SectionHeader />
+      <SectionHero />
+      <SectionServices />
+    </main>
+
+    <Footer />
+  </body>
+</html>

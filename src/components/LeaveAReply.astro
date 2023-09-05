@@ -1,0 +1,55 @@
+---
+const info = `You may use these HTML tags and attributes: <a href="" title=""> <abbr title=""> <acronym title=""> <b> <blockquote cite=""> <cite> <code> <del datetime=""> <em> <i> <q cite=""> <strike> <strong>`;
+---
+
+<div class="container my-8">
+  <h1 class="font-arvo font-semibold text-xl mb-4">Leave a Reply</h1>
+  <form
+    id="contact-form"
+    class="text-sm text-neutral-500 p-4 border border-neutral-200 flex flex-col gap-4 w-full sm:w-3/4"
+  >
+    <p>
+      Your email address will not be published. Required fields are marked *
+    </p>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="p-2 border w-full" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="p-2 border w-full" />
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" id="website" class="p-2 border w-full" />
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <textarea id="comment" rows="4" class="p-2 border w-full"></textarea>
+    </div>
+
+    <p set:text={info} />
+
+    <button
+      class="text-white self-start p-1 rounded-md px-8 text-sm bg-gradient-to-t from-cyan-900 to-cyan-500"
+      >Send</button
+    >
+  </form>
+</div>
+
+<style>
+  .form-group label::after {
+    content: "*";
+    color: red;
+    margin-right: 0.25rem;
+  }
+</style>
+
+<script>
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm)
+    contactForm.addEventListener("submit", handleContactFormSubmit);
+  function handleContactFormSubmit() {
+    alert("To be implemented");
+  }
+</script>

@@ -1,0 +1,28 @@
+---
+type Props = {
+  navLinks: Array<{
+    name: string;
+    url: string;
+  }>;
+};
+
+const { navLinks } = Astro.props;
+---
+
+<select id="mobile-nav" class="block sm:hidden">
+  <option value="" selected>Select a page</option>
+
+  {
+    navLinks.map((nav) => {
+      return <option value={nav.url}>{nav.name}</option>;
+    })
+  }
+</select>
+
+<script>
+  const selectElement = document.getElementById("mobile-nav");
+  if (selectElement)
+    selectElement.addEventListener("change", (e: any) => {
+      window.location.href = e.target.value;
+    });
+</script>

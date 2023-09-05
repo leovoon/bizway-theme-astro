@@ -1,0 +1,29 @@
+---
+import searchIcon from "../assets/search.png";
+import { Image } from "astro:assets";
+---
+
+<script>
+  const searchForm = document.getElementById("search-form");
+  if (searchForm) searchForm.addEventListener("submit", handleSubmit);
+
+  function handleSubmit() {
+    alert("🎉 To be implemented.");
+  }
+</script>
+
+<div class="bg-cyan-800 rounded-md shadow-inner relative">
+  <form id="search-form">
+    <input
+      class="focus:outline-none w-full h-full bg-transparent px-3 py-2 text-sm text-neutral-50"
+      placeholder="Search"
+    />
+    <button type="submit">
+      <Image
+        src={searchIcon}
+        alt="search"
+        class="absolute right-3 top-1/2 transform -translate-y-1/2"
+      />
+    </button>
+  </form>
+</div>

@@ -1,0 +1,48 @@
+---
+import serviceImage1 from "../assets/service1.png";
+import serviceImage2 from "../assets/service2.png";
+import serviceImage3 from "../assets/service3.png";
+import ServiceImage from "./ServiceImage.astro";
+
+const services = [
+  {
+    title: "Our Business",
+    description:
+      "Information forms the basis of every wise decision. It is required for planning,solutions, progress and eventually achievements. Only information from quality source can support good decisions. We provide comprehensive data, accurate analytics and reliable services that the financial     services, real estate professionals, property investors and many other      businesses can trust. Valuable insight derived from quality information      provides beneficial views required to recognize, understand and make intelligent efforts to resolve any business issues and problems.",
+    image: serviceImage1,
+  },
+  {
+    title: "Our Data",
+    description:
+      "We collect and maintain the most comprehensive property and property-related industry data in Malaysia. Our repositories consist of property sales record, property transaction volume and value, Malaysian House Price Index, property inventory, new housing projects, property listings, housing scheme polygon, property financial data, point of interest and demographic data.",
+    image: serviceImage2,
+  },
+  {
+    title: "Our Services",
+    description:
+      "We utilize our terabytes of data to compute analytics that evaluate market performance, determine trends and assess market and property risks. Analytics include market supply-demand indicators such as turnover rate, ratio of sold price and listing price, absorption rate, etc. These reports are available at multiple geographical levels, ranging from regional, city, sub-city, neighbourhood, scheme and address.",
+    image: serviceImage3,
+  },
+];
+
+---
+
+<section class="container my-12">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr)_)] gap-8">
+    {
+      services.map((item) => {
+        return (
+          <div class="flex flex-col gap-8">
+            <header class="font-arvo font-semibold text-gray-500 text-2xl">
+              {item.title}
+            </header>
+            <ServiceImage src={item.image} alt={item.title} />
+            <p class="text-justify text-sm leading-relaxed font-extralight text-neutral-500">
+              {item.description}
+            </p>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
